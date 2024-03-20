@@ -1,0 +1,22 @@
+
+
+//the commit id should not be a one of a merge 
+git fetch --all --tags
+git checkout v3.16.0-iso
+git cherry-pick fcb3573f2286c034a5b480315021a0e0149c08d6
+git tag -d v3.16.0-iso
+git tag v3.16.0-iso
+git push origin tags/v3.16.0-iso --force
+
+
+
+//ssh config
+
+eval $(ssh-agent)
+
+ ssh-add /home/nizar/.ssh/id_ed25519-woop-git-sign                                                                                                                            ─╯
+ssh-add /home/nizar/.ssh/id_rsa # for the key of git authent
+
+
+
+
