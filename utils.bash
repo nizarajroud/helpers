@@ -88,6 +88,40 @@ EOT
     code main.tf
 
 } 
+
+function cdk_start {
+
+    MAIN_PATH="/mnt/c/Users/NizarAjroud/NZSPCE/OPERATIONAL/CLOUD_WORKS/CLD_VSC_WSPCE/CSNA/cdk_trainings"
+    PRJ="Cdksample$(date -u +"%H%M")" 
+
+cd $MAIN_PATH && mkdir $PRJ && cd $PRJ
+cdk init app --language typescript 
+
+rm lib/$PRJ-stack.ts  && touch lib/$PRJ-stack.ts
+    cat <<EOT >> lib/$PRJ-stack.ts
+import * as cdk from 'aws-cdk-lib';
+import { Construct } from 'constructs';
+import * as sqs from 'aws-cdk-lib/aws-sqs';
+
+export class ${PRJ}Stack extends cdk.Stack {
+  constructor(scope: Construct, id: string, props?: cdk.StackProps) {
+    super(scope, id, props);
+
+    // The code that defines your stack goes here
+
+    const queue = new sqs.Queue(this, '${PRJ}Queue', {
+      visibilityTimeout: cdk.Duration.seconds(300)
+    });
+  }
+}
+EOT
+npm run build
+cdk ls && cdk synth
+cdk bootstrap aws://579977624675/ca-central-1 && cdk deploy
+    
+#     code main.tf
+
+} 
 function ghrun_wf_br {
     WORKFLOW_NAME=$1
     BRANCH_NAME=$2
@@ -111,6 +145,8 @@ function patch-cmds {
     echo git push origin tags/$VERSION --force
     echo git checkout -b chore/upgrade-iso-$VERSION \# Upgraded iso to $VERSION
     echo git checkout -b chore/upgrade-prod-$VERSION \# Upgraded prod to $VERSION
+    echo git clone  -b chore/upgrade-prod-$VERSION \# Upgraded prod to $VERSION
+    
     # echo git push origin \":$VERSION\" 
     # echo git push origin tags/$VERSION
     # echo Delete local tag : git tag -d $VERSION 
