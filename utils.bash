@@ -94,6 +94,7 @@ function cdk_start {
     MAIN_PATH="/mnt/c/Users/NizarAjroud/NZSPCE/OPERATIONAL/CLOUD_WORKS/CLD_VSC_WSPCE/CSNA/cdk_trainings"
     PRJ="Cdksample$(date -u +"%H%M")" 
 
+echo "project sample name:  $PRJ"
 cd $MAIN_PATH && mkdir $PRJ && cd $PRJ
 cdk init app --language typescript 
 
@@ -119,7 +120,7 @@ npm run build
 cdk ls && cdk synth
 cdk bootstrap aws://579977624675/ca-central-1 && cdk deploy
     
-#     code main.tf
+    code lib/$PRJ-stack.ts
 
 } 
 function ghrun_wf_br {
