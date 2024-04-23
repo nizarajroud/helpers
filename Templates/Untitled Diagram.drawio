@@ -1,4 +1,4 @@
-<mxfile modified="2024-04-23T20:49:50.514Z" host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36 Edg/124.0.0.0" etag="3u6fUDsEqdzsXh4xeQPT" version="24.2.8" type="github" pages="5">
+<mxfile modified="2024-04-23T21:03:30.317Z" host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36 Edg/124.0.0.0" etag="Dp1xwCYf4fiu3Hln3HoB" version="24.2.8" type="github" pages="5">
   <diagram id="Ht1M8jgEwFfnCIfOTk4-" name="Page-1">
     <mxGraphModel dx="1377" dy="915" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -190,7 +190,7 @@
       </root>
     </mxGraphModel>
   </diagram>
-  <diagram name="Page-1" id="jlp4yzeYZmBKeEDdXUJW">
+  <diagram name="OPA-demo" id="jlp4yzeYZmBKeEDdXUJW">
     <mxGraphModel dx="1033" dy="686" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
@@ -228,11 +228,11 @@
         </mxCell>
         <mxCell id="SodQSrbPSN-j6QDCCie8-40" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="SodQSrbPSN-j6QDCCie8-41" target="SodQSrbPSN-j6QDCCie8-38" edge="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="167" y="240" as="targetPoint" />
+            <mxPoint x="167" y="320" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="SodQSrbPSN-j6QDCCie8-41" value="Application developer" style="image;sketch=0;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/mscae/Person.svg;" parent="1" vertex="1">
-          <mxGeometry x="50" y="215" width="37" height="50" as="geometry" />
+          <mxGeometry x="50" y="295" width="37" height="50" as="geometry" />
         </mxCell>
         <mxCell id="SodQSrbPSN-j6QDCCie8-42" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="SodQSrbPSN-j6QDCCie8-38" target="SodQSrbPSN-j6QDCCie8-6" edge="1">
           <mxGeometry relative="1" as="geometry" />
@@ -243,7 +243,13 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="SodQSrbPSN-j6QDCCie8-38" value="Create application" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="430" y="210" width="120" height="60" as="geometry" />
+          <mxGeometry x="430" y="290" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="iMTsjVbhqvX_V11yuaeA-2" value="&lt;font style=&quot;font-size: 13px;&quot;&gt;&lt;b&gt;&lt;u&gt;Platform Engineers&lt;br&gt;&lt;/u&gt;&lt;/b&gt;&lt;br&gt;&lt;/font&gt;&lt;ul style=&quot;line-height: 150%; font-size: 13px;&quot;&gt;&lt;li&gt;&lt;font style=&quot;font-size: 13px;&quot;&gt;Create Environments and environment providers&lt;/font&gt;&lt;/li&gt;&lt;li&gt;&lt;font style=&quot;font-size: 13px;&quot;&gt;Deploy an environment provider&lt;/font&gt;&lt;/li&gt;&lt;li&gt;&lt;font style=&quot;font-size: 13px;&quot;&gt;Deploy an environment&lt;/font&gt;&lt;/li&gt;&lt;/ul&gt;&lt;div style=&quot;font-size: 13px;&quot;&gt;&lt;br&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="20" y="400" width="360" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="iMTsjVbhqvX_V11yuaeA-3" value="&lt;font style=&quot;font-size: 13px;&quot;&gt;&lt;b&gt;&lt;u&gt;Platform Engineers&lt;br&gt;&lt;/u&gt;&lt;/b&gt;&lt;br&gt;&lt;/font&gt;&lt;ul style=&quot;line-height: 150%; font-size: 13px;&quot;&gt;&lt;li&gt;&lt;font style=&quot;font-size: 13px;&quot;&gt;Create Environments and environment providers&lt;/font&gt;&lt;/li&gt;&lt;li&gt;&lt;font style=&quot;font-size: 13px;&quot;&gt;Deploying an environment provider&lt;/font&gt;&lt;/li&gt;&lt;li&gt;&lt;font style=&quot;font-size: 13px;&quot;&gt;Deploying an environment&lt;/font&gt;&lt;/li&gt;&lt;/ul&gt;&lt;div style=&quot;font-size: 13px;&quot;&gt;&lt;br&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="461" y="400" width="360" height="130" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
