@@ -181,8 +181,7 @@ function gh_start {
     
     #initialise repository
     cd $REPO_NAME
-    mkdir .github && cd .github
-    mkdir workflows && cd workflows
+    mkdir -p .github/workflows && cd .github/workflows
     touch $REPO_NAME.yml
     add_multiline_content-github_wf $REPO_NAME.yml
     cd ..\..
