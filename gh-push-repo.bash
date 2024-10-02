@@ -1,3 +1,5 @@
+#!/bin/bash
+
 REPO_NAME=$1
 
 #create repository
