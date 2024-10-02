@@ -8,6 +8,7 @@ mkdir $REPO_NAME
 
 #initialise repository
 
+cd $REPO_NAME
 git init
 git add .
 git commit -m "initial commit"
