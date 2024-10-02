@@ -152,33 +152,15 @@ function ghcreate {
 
 } 
 function patch-cmds {
-    REPO_NAME=$1
-    
-    #create repository
-    mkdir $REPO_NAME
-    
-    #initialise repository
-    cd $REPO_NAME
-    git init
-    echo "# My New Project $REPO_NAME" > README.md
-    git add .
-    git commit -m "initial commit"
-    
-    #create remote repository and origin
-    gh repo create $REPO_NAME --private
-    sleep 5
-    git remote add origin https://github.com/nizarajroud/$REPO_NAME.git
-    git push --set-upstream origin main
-    git push
-    # VERSION=$1
-    # echo git checkout tags/$VERSION
-    # echo git tag -d $VERSION \&\& git push origin \":$VERSION\" 
-    # echo git tag  $VERSION \&\& git push origin tags/$VERSION
-    # echo git restore . \&\& git checkout tags/$VERSION
-    # echo git push origin tags/$VERSION --force
-    # echo git checkout -b chore/upgrade-iso-$VERSION \# Upgraded iso to $VERSION
-    # echo git checkout -b chore/upgrade-prod-$VERSION \# Upgraded prod to $VERSION
-    # echo git clone  -b chore/upgrade-prod-$VERSION \# Upgraded prod to $VERSION
+    VERSION=$1
+    echo git checkout tags/$VERSION
+    echo git tag -d $VERSION \&\& git push origin \":$VERSION\" 
+    echo git tag  $VERSION \&\& git push origin tags/$VERSION
+    echo git restore . \&\& git checkout tags/$VERSION
+    echo git push origin tags/$VERSION --force
+    echo git checkout -b chore/upgrade-iso-$VERSION \# Upgraded iso to $VERSION
+    echo git checkout -b chore/upgrade-prod-$VERSION \# Upgraded prod to $VERSION
+    echo git clone  -b chore/upgrade-prod-$VERSION \# Upgraded prod to $VERSION
     
     # echo git push origin \":$VERSION\" 
     # echo git push origin tags/$VERSION
