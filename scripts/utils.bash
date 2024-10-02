@@ -132,40 +132,40 @@ cdk bootstrap aws://579977624675/ca-central-1 && cdk deploy
     code lib/$PRJ-stack.ts
 
 } 
-# function cdk_start {
+function cdk_start {
 
-#     MAIN_PATH="/mnt/c/Users/NizarAjroud/NZSPCE/OPERATIONAL/CLOUD_WORKS/CLD_VSC_WSPCE/CSNA/cdk_trainings"
-#     PRJ="Cdksample$(date -u +"%H%M")" 
+    MAIN_PATH="/mnt/c/Users/NizarAjroud/NZSPCE/OPERATIONAL/CLOUD_WORKS/CLD_VSC_WSPCE/CSNA/cdk_trainings"
+    PRJ="Cdksample$(date -u +"%H%M")" 
 
-# echo "project sample name:  $PRJ"
-# cd $MAIN_PATH && mkdir $PRJ && cd $PRJ
-# cdk init app --language typescript 
+echo "project sample name:  $PRJ"
+cd $MAIN_PATH && mkdir $PRJ && cd $PRJ
+cdk init app --language typescript 
 
-# rm lib/$PRJ-stack.ts  && touch lib/$PRJ-stack.ts
-#     cat <<EOT >> lib/$PRJ-stack.ts
-# import * as cdk from 'aws-cdk-lib';
-# import { Construct } from 'constructs';
-# import * as sqs from 'aws-cdk-lib/aws-sqs';
+rm lib/$PRJ-stack.ts  && touch lib/$PRJ-stack.ts
+    cat <<EOT >> lib/$PRJ-stack.ts
+import * as cdk from 'aws-cdk-lib';
+import { Construct } from 'constructs';
+import * as sqs from 'aws-cdk-lib/aws-sqs';
 
-# export class ${PRJ}Stack extends cdk.Stack {
-#   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
-#     super(scope, id, props);
+export class ${PRJ}Stack extends cdk.Stack {
+  constructor(scope: Construct, id: string, props?: cdk.StackProps) {
+    super(scope, id, props);
 
-#     // The code that defines your stack goes here
+    // The code that defines your stack goes here
 
-#     const queue = new sqs.Queue(this, '${PRJ}Queue', {
-#       visibilityTimeout: cdk.Duration.seconds(300)
-#     });
-#   }
-# }
-# EOT
-# npm run build
-# cdk ls && cdk synth
-# cdk bootstrap aws://579977624675/ca-central-1 && cdk deploy
+    const queue = new sqs.Queue(this, '${PRJ}Queue', {
+      visibilityTimeout: cdk.Duration.seconds(300)
+    });
+  }
+}
+EOT
+npm run build
+cdk ls && cdk synth
+cdk bootstrap aws://579977624675/ca-central-1 && cdk deploy
     
-#     code lib/$PRJ-stack.ts
+    code lib/$PRJ-stack.ts
 
-# } 
+} 
 function ghrun_wf_br {
     WORKFLOW_NAME=$1
     BRANCH_NAME=$2
@@ -173,7 +173,7 @@ function ghrun_wf_br {
     gh workflow run $WORKFLOW_NAME.yml --ref $BRANCH_NAME && sleep 10 && gh run watch $(gh run list --branch $BRANCH_NAME --user nizarajroud  --limit 1 --json databaseId --jq '.[].databaseId')
 
 } 
-function ghcreate {
+function gh_start {
     REPO_NAME=$1
     
     #create repository
