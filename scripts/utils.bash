@@ -183,22 +183,8 @@ function gh_start {
     cd $REPO_NAME
     mkdir -p .github/workflows
     touch $REPO_NAME.yml
-      cat <<EOF >> "$REPO_NAME.yml"
-        name: CI Pipeline
-        
-        on:
-          push:
-            branches:
-              - main
-        
-        jobs:
-          build:
-            runs-on: ubuntu-latest
-            steps:
-              - uses: actions/checkout@v2
-              - name: Run a simple script
-                run: echo "Hello, world!"
-    EOF
+    add_multiline_content-github_wf $REPO_NAME.yml
+    cd ..\..
     git init
     echo "# My New Project $REPO_NAME" > README.md
     git add .
@@ -246,3 +232,25 @@ function start_tf_project {
 
 }
 
+#annexes functions
+add_multiline_content-github_wf() {
+  local target_file="$1"
+
+  # Utilisation d'un bloc HereDoc pour conserver l'indentation
+  cat <<EOF >> "$target_file"
+    name: CI Pipeline
+    
+    on:
+      push:
+        branches:
+          - main
+    
+    jobs:
+      build:
+        runs-on: ubuntu-latest
+        steps:
+          - uses: actions/checkout@v2
+          - name: Run a simple script
+            run: echo "Hello, world!"
+EOF
+}
