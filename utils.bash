@@ -130,11 +130,25 @@ function ghrun_wf_br {
     gh workflow run $WORKFLOW_NAME.yml --ref $BRANCH_NAME && sleep 10 && gh run watch $(gh run list --branch $BRANCH_NAME --user nizarajroud  --limit 1 --json databaseId --jq '.[].databaseId')
 
 } 
-function ghrun_wf_br {
-    WORKFLOW_NAME=$1
-    BRANCH_NAME=$2
-    #echo "gh workflow run $WORKFLOW_NAME.yml --ref $BRANCH_NAME && sleep 10 && gh run watch $(gh run list --branch $BRANCH_NAME --user nizarajroud  --limit 1 --json databaseId --jq '.[].databaseId')"
-    gh workflow run $WORKFLOW_NAME.yml --ref $BRANCH_NAME && sleep 10 && gh run watch $(gh run list --branch $BRANCH_NAME --user nizarajroud  --limit 1 --json databaseId --jq '.[].databaseId')
+function ghcreate {
+    REPO_NAME=$1
+    
+    #create repository
+    mkdir $REPO_NAME
+    
+    #initialise repository
+    cd $REPO_NAME
+    git init
+    echo "# My New Project $REPO_NAME" > README.md
+    git add .
+    git commit -m "initial commit"
+    
+    #create remote repository and origin
+    gh repo create $REPO_NAME --private
+    sleep 5
+    git remote add origin https://github.com/nizarajroud/$REPO_NAME.git
+    git push --set-upstream origin main
+    git push
 
 } 
 function patch-cmds {
