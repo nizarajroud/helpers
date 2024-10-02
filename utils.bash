@@ -88,7 +88,16 @@ EOT
     code main.tf
 
 } 
+function bstge_start {
+    # 0.5.7 will install Backstage 1.20.3
+    BACKSTAGE_CREATE_APP_VERSION="0.5.8"
+    MAIN_PATH="/mnt/c/Users/NizarAjroud/NZSPCE/OPERATIONAL/CLOUD_WORKS/CLD_VSC_WSPCE/ALL-trainings/backstage-trainings"
+    PRJ="bstgesample$(date -u +"%H%M")"
+    backstageDir=$MAIN_PATH/$PRJ 
 
+    echo "project sample name:  $PRJ"
+    BACKSTAGE_APP_NAME=$PRJ npx -y -q @backstage/create-app@$BACKSTAGE_CREATE_APP_VERSION --path $backstageDir
+} 
 function cdk_start {
 
     MAIN_PATH="/mnt/c/Users/NizarAjroud/NZSPCE/OPERATIONAL/CLOUD_WORKS/CLD_VSC_WSPCE/CSNA/cdk_trainings"
@@ -123,6 +132,40 @@ cdk bootstrap aws://579977624675/ca-central-1 && cdk deploy
     code lib/$PRJ-stack.ts
 
 } 
+# function cdk_start {
+
+#     MAIN_PATH="/mnt/c/Users/NizarAjroud/NZSPCE/OPERATIONAL/CLOUD_WORKS/CLD_VSC_WSPCE/CSNA/cdk_trainings"
+#     PRJ="Cdksample$(date -u +"%H%M")" 
+
+# echo "project sample name:  $PRJ"
+# cd $MAIN_PATH && mkdir $PRJ && cd $PRJ
+# cdk init app --language typescript 
+
+# rm lib/$PRJ-stack.ts  && touch lib/$PRJ-stack.ts
+#     cat <<EOT >> lib/$PRJ-stack.ts
+# import * as cdk from 'aws-cdk-lib';
+# import { Construct } from 'constructs';
+# import * as sqs from 'aws-cdk-lib/aws-sqs';
+
+# export class ${PRJ}Stack extends cdk.Stack {
+#   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
+#     super(scope, id, props);
+
+#     // The code that defines your stack goes here
+
+#     const queue = new sqs.Queue(this, '${PRJ}Queue', {
+#       visibilityTimeout: cdk.Duration.seconds(300)
+#     });
+#   }
+# }
+# EOT
+# npm run build
+# cdk ls && cdk synth
+# cdk bootstrap aws://579977624675/ca-central-1 && cdk deploy
+    
+#     code lib/$PRJ-stack.ts
+
+# } 
 function ghrun_wf_br {
     WORKFLOW_NAME=$1
     BRANCH_NAME=$2
