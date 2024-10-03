@@ -198,9 +198,9 @@ function gh_start {
     git push
 
 } 
-function commit_and_push {
+function add_commit_and_push {
   MSG=$1
-  git commit -m $MSG && git push
+  git add . && git commit -m $MSG && git push
 
 }
 function patch-cmds {
