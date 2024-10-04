@@ -213,7 +213,7 @@ function zgit-cmds {
     echo git checkout -b chore/upgrade-iso-$VERSION \# Upgraded iso to $VERSION
     echo git checkout -b chore/upgrade-prod-$VERSION \# Upgraded prod to $VERSION
     echo git clone  -b chore/upgrade-prod-$VERSION \# Upgraded prod to $VERSION
-    echo git push --set-upstream origin garde-dev-oct-3
+    echo git push --set-upstream origin brname
     echo discard any changes: git clean -fd
     echo git push origin $VERSION
     echo git push origin tags/$VERSION
