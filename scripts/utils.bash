@@ -204,7 +204,7 @@ function add_commit_and_push {
 
 }
 function zgit-cmds {
-    VERSION="${1:-1\.0\.0}"
+    VERSION="${1:-1.0.0}"
     echo git checkout tags/$VERSION
     echo git tag -d $VERSION \&\& git push origin \":$VERSION\" 
     echo git tag  $VERSION \&\& git push origin tags/$VERSION
