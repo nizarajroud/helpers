@@ -218,12 +218,12 @@ function zgit-cmds {
     echo git push origin \":$VERSION\" 
     echo git push origin tags/$VERSION
     echo Delete local tag : git tag -d $VERSION 
-    echo 'Delete remote tag : git push origin ":$VERSION" '
+    echo Delete remote tag : git push origin \":$VERSION\"
     echo Perform cherry pick : git cherry-pick  commit-id
     echo push code if it is on a branch
-    echo create local tag :  git tag  $VERSION
-    echo push remote tag to start the build: git push origin tags/$VERSION
-    echo "Force replace the old by the new one on remote : git push origin tags/$VERSION --force
+    echo create local tag :  git tag  \":$VERSION\"
+    echo push remote tag to start the build: git push origin tags\":$VERSION\"
+    echo Force replace the old by the new one on remote : git push origin tags \":$VERSION\"  --force
  
 } 
 
