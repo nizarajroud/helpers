@@ -203,8 +203,8 @@ function add_commit_and_push {
   git add . && sleep 7 && git commit -m $MSG && git push
 
 }
-function patch-cmds {
-    VERSION=$1
+function zgit-cmds {
+    VERSION="${1:-1.0.0}"
     echo git checkout tags/$VERSION
     echo git tag -d $VERSION \&\& git push origin \":$VERSION\" 
     echo git tag  $VERSION \&\& git push origin tags/$VERSION
@@ -213,16 +213,17 @@ function patch-cmds {
     echo git checkout -b chore/upgrade-iso-$VERSION \# Upgraded iso to $VERSION
     echo git checkout -b chore/upgrade-prod-$VERSION \# Upgraded prod to $VERSION
     echo git clone  -b chore/upgrade-prod-$VERSION \# Upgraded prod to $VERSION
-    
-    # echo git push origin \":$VERSION\" 
-    # echo git push origin tags/$VERSION
-    # echo Delete local tag : git tag -d $VERSION 
-    # echo 'Delete remote tag : git push origin ":$VERSION" '
-    # echo Perform cherry pick : git cherry-pick  commit-id
-    # echo push code if it is on a branch
-    # echo create local tag :  git tag  $VERSION
-    # echo push remote tag to start the build: git push origin tags/$VERSION
-    # echo "Force replace the old by the new one on remote : git push origin tags/$VERSION --force
+    git push --set-upstream origin garde-dev-oct-3
+    echo discard any changes: git clean -fd
+    echo git push origin \":$VERSION\" 
+    echo git push origin tags/$VERSION
+    echo Delete local tag : git tag -d $VERSION 
+    echo 'Delete remote tag : git push origin ":$VERSION" '
+    echo Perform cherry pick : git cherry-pick  commit-id
+    echo push code if it is on a branch
+    echo create local tag :  git tag  $VERSION
+    echo push remote tag to start the build: git push origin tags/$VERSION
+    echo "Force replace the old by the new one on remote : git push origin tags/$VERSION --force
  
 } 
 
