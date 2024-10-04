@@ -122,7 +122,6 @@ alias sdenv="npx dotenv-vault@latest push"
 alias hh="history | cut -c 8-"
 alias gh_start='(){ zsh -c "curl -s https://raw.githubusercontent.com/nizarajroud/helpers/main/scripts/utils.bash -o /tmp/utils.bash &&  dos2unix /tmp/utils.bash && source /tmp/utils.bash; gh_start $1" ;}'
 alias zgit-cmds='(){ zsh -c "curl -s https://raw.githubusercontent.com/nizarajroud/helpers/main/scripts/utils.bash -o /tmp/utils.bash &&  dos2unix /tmp/utils.bash && source /tmp/utils.bash; zgit-cmds $1" ;}'
-function add_commit_and_push {
 alias cc='(){ zsh -c "curl -s https://raw.githubusercontent.com/nizarajroud/helpers/main/scripts/utils.bash -o /tmp/utils.bash &&  dos2unix /tmp/utils.bash && source /tmp/utils.bash; add_commit_and_push $1" ;}'
 # Enable command auto-completion
 # github
