@@ -200,7 +200,7 @@ function gh_start {
 } 
 function add_commit_and_push {
   MSG=$1
-  git add . && git commit -m $MSG && git push
+  git add . && sleep 7 && git commit -m $MSG && git push
 
 }
 function patch-cmds {
