@@ -3,6 +3,8 @@
 # Universal Video Downloader Setup and Interactive Script for WSL Ubuntu 22 with ZSH
 # This script handles installation, setup, and provides fuzzy selection for YouTube and Facebook video downloads
 
+
+
 set -e  # Exit on any error
 
 # Colors for output
